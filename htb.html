@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Writeups HackTheBox</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    nav a:hover {
+        background-color: #39ff14;
+        border-radius: 5px;
+        color: black;
+        padding: 10px;
+    }
+
+    .writeup-container {
+      border: 2px solid #333;
+      background-color: #111;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .writeup-container h2 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .writeup-container p {
+      line-height: 1.5;
+    }
+
+    .writeup-container a {
+      color: #39ff14;
+      text-decoration: none;
+    }
+
+    .writeup-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#">VulnHub</a></li>
+      <li><a href="#">Acerca de Mí</a></li>
+    </ul>
+  </nav>
+
+  <h1>Writeups HackTheBox</h1>
+
+  <div class="writeup-container">
+    <h2>Cronos - Medium</h2>
+    <p>La máquina Cronos está catalogada en HackTheBox como <i>Medium. </i>dicha máquina vamos a aprovecharnos de un <i>XPath Injection Login Bypass </i>poder acceder al portal Login como usuario Administrador sin proporcionar credenciales válidas, también vamos a aprovecharnos de la ejecución del comando <i>ping </i>para ejecutar junto con dicho comando una reverse shell y así obtener acceso al sistema. Por otro lado en la Escalada de Privilegios vamos a abusar de una tarea Cron modificando un archivo el cual está ejecutando cada minuto para conseguir ser Usuario Privilegiado (root).</p>
+  </div>
+
+  <div class="writeup-container">
+    <h2>Writeup 2 - Máquina 2</h2>
+    <p>Descripción breve de la máquina y el writeup.</p>
+    <a href="writeup2.html">Ver writeup</a>
+  </div>
+
+</body>
+</html>

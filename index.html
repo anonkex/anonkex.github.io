@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <title>Blog de AnonKex</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    nav a:hover {
+        background-color: #39ff14;
+        border-radius: 5px;
+        color: black;
+        padding: 10px;
+    }
+
+    .writeup-container {
+      border: 2px solid #333;
+      background-color: #111;
+      padding: 20px;
+      margin: 2%;
+      width: 40%;
+      float: left;
+      text-align: center;
+    }
+
+    .writeup-container h2 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .writeup-container a {
+      color: #39ff14;
+      text-decoration: none;
+    }
+
+    .writeup-container a:hover {
+      text-decoration: underline;
+    }
+
+    .platform-containers {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .writeup-container a img {
+      border-radius: 5px;
+    }
+
+    .writeup-container hr {
+      width: 40%;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>|</li>
+      <li><a href="htb.html">HTB</a></li>
+      <li>|</li>
+      <li><a href="#">VulnHub</a></li>
+      <li>|</li>
+      <li><a href="#">Herramientas</a></li>
+      <li>|</li>
+      <li><a href="acerca-de-mi.html">Acerca de Mí</a></li>
+    </ul>
+  </nav>
+  
+  <h1>Mis Writeups</h1>
+
+  <div class="platform-containers">
+    <div class="writeup-container">
+      <h2>HackTheBox</h2>
+      <hr><br>
+      <a href="htb.html"><img src="htb.png" width="470" height="auto"></a>
+      <br><br>
+      <a href="htb.html">Ver writeups</a>
+    </div>
+
+    <div class="writeup-container">
+      <h2>VulnHub</h2>
+      <hr><br>
+      <a href="#"><img src="vulnhub.jpg" width="350" height="auto"></a>
+      <br><br>
+      <a href="#" style="color: rgb(255, 136, 0);">Ver writeups</a>
+    </div>
+  </div>
+  <!-- Agrega más divs .writeup-container según necesites -->
+
+</body>
+</html>
