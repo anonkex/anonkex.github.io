@@ -2,11 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <title>Acerca De Mí</title>
+    <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+        text-align: center;
+        width: 60%;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    nav a:hover {
+        background-color: white;
+        border-radius: 5px;
+        color: black;
+        padding: 10px;
+    }
+
+    hr {
+        margin-top: 3%;
+        margin-bottom: 3%;
+        width: 40%;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 3%;
+    }
+
+    footer {
+      background-color: #111;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 22%;
+    }
+
+    img {
+        border-radius: 50px;
+        margin-top: 10%;
+    }
+
+    table {
+        margin-top: 8%;
+        text-align: center;
+    }
+
+    td {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    </style>
 </head>
 <body>
-    <p>Mi nombre es Nil, y actualmente estoy estudiando CFGM de Sistemas Microinformáticos y Redes. He creado esta página para que se pueda apreciar mi pasión por la ciberseguridad y dedicación en el campo, así como también poder ayudar a quien lo necesite con los writeups y herramientas que proporciono. Actualmente tengo 46 máquinas resueltas en HackTheBox y 0 resueltas en VulnHub.</p>
+    <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li>|</li>
+          <li><a href="htb.html">HTB</a></li>
+          <li>|</li>
+          <li><a href="#">VulnHub</a></li>
+          <li>|</li>
+          <li><a href="#">Herramientas</a></li>
+        </ul>
+    </nav>
+    <h1>Acerca de Mí</h1>
+    <hr>
+    <center><p>Mi nombre es Nil, y actualmente estoy estudiando CFGM de Sistemas Microinformáticos y Redes. He creado esta página para que se pueda apreciar mi pasión por la ciberseguridad y dedicación en el campo, así como también poder ayudar a quien lo necesite con los writeups y herramientas que proporciono. Actualmente tengo 46 máquinas resueltas en HackTheBox y 0 resueltas en VulnHub.</p></center>
 
-    <!-- Poner mi perfil de HackTheBox y de GitHub -->
+    <center><p>A continuación dejo mis perfiles y mail para cualquier cosa.</p></center>
+
+    <center><table>
+        <tr>
+            <td><a href="https://github.com/anonkex" target="_blank"><img src="github-logo.png" width="50" height="auto"></a></td>
+            <td><a href="https://app.hackthebox.com/profile/901637" target="_blank"><img src="htb-logo.jpg" width="50" height="auto"></a></td>
+            <td><a href="mailto:anonkex@proton.me" target="_blank"><img src="mail-logo.png" width="50" height="auto"></a></td>
+        </tr>
+        <tr>
+            <td>GitHub</td>
+            <td>HackTheBox</td>
+            <td>Mail</td>
+        </tr>
+    </table></center>
+
+    <footer>Página Web hecha por AnonKex ©2023</footer>
 </body>
 </html>

@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Writeup 1 - Máquina 1</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <title>Cronos - HackTheBox</title>
   <style>
     body {
       background-color: #222;
@@ -61,7 +62,7 @@
       margin-top: 6%;
     }
 
-    .writeup-container p {
+    .texto {
       max-width: 50%;
       margin-bottom: 2%;
     }
@@ -70,6 +71,17 @@
       margin-top: 2%;
       margin-bottom: 2%;
       width: 30%;
+    }
+
+    footer {
+      background-color: #111;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 30%;
     }
   </style>
 </head>
@@ -93,7 +105,9 @@
 
   <div class="writeup-container">
     <h2>Enumeración de puertos con Nmap</h2>
-    <p>Para empezar, vamos a realizar un escaneo de la IP víctima, para ver que puertos están abiertos y así hacernos una idea de donde tenemos que atacar.</p>
+    <div class="texto">
+      <p>Para empezar, vamos a realizar un escaneo de la IP víctima, para ver que puertos están abiertos y así hacernos una idea de donde tenemos que atacar.</p>
+    </div>
     <div class="texto-resaltado">
       <pre>
         <span style="color: rgb(216,216,216);">
@@ -136,10 +150,85 @@
   </div>
 
   <div class="writeup-container">
-    <h2>Paso 2</h2>
-    <p>Explicación del paso 2.</p>
-    <pre><code><span class="highlight">// Aquí irá tu código bash, python, java, etc.</span></code></pre>
+    <h2>Escaneo exhaustivo de los puertos</h2>
+    <div class="texto">
+      <span style="display: inline;">A continuación, vamos a realizar un escaneo sobre cada puerto abierto que nos ha reportado el anterior output con el fin de encontrar los servicios que están corriendo en cada puerto y las versiones de los mismos. Para que sea más cómodo y no se tengan que copiar los puertos uno por uno en este comando, recomiendo el uso de la herramienta que tengo publicada aquí en la página, que se llama</span>
+      <i>extractPorts.</i>
+      <span style="display: inline;">Así, tan solo se tiene que pasar la herramienta y el archivo</span>
+      <i>allPorts</i>
+      <span style="display: inline;">que hemos creado en el anterior escaneo, y automáticamente se copiarán los puertos a la clipboard.</span>
+    </div>    
+    <div class="texto-resaltado">
+      <pre>
+        <span style="color: rgb(216,216,216);">
+  ┌─[anonkex@parrot]─[~/Desktop/HTB/Cronos/nmap]
+  └──╼ $</span><span style="color: #39ff14;">sudo nmap -sCV -p22,53,80 -oN targeted 10.10.10.13</span><span style="color: rgb(216,216,216);">
+  Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-28 06:27 CEST
+  Nmap scan report for cronos.htb (10.10.10.13)
+  Host is up (0.050s latency).
+
+  PORT   STATE SERVICE VERSION
+  22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
+  | ssh-hostkey: 
+  |   2048 18b973826f26c7788f1b3988d802cee8 (RSA)
+  |   256 1ae606a6050bbb4192b028bf7fe5963b (ECDSA)
+  |_  256 1a0ee7ba00cc020104cda3a93f5e2220 (ED25519)
+  53/tcp open  domain  ISC BIND 9.10.3-P4 (Ubuntu Linux)
+  | dns-nsid: 
+  |_  bind.version: 9.10.3-P4-Ubuntu
+  80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+  |_http-server-header: Apache/2.4.18 (Ubuntu)
+  |_http-title: Cronos
+  Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+  Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+  Nmap done: 1 IP address (1 host up) scanned in 18.89 seconds</span>
+      </pre>
+    </div>
   </div>
 
+  <div class="writeup-container">
+    <h2>Inspección web básica</h2>
+    <div class="texto">
+      <span style="display: inline;">Como en nuestro escaneo de Nmap salía que el puerto 80 (http) estaba abierto, entramos y nos encontramos con una</span>
+      <i>Default Page de Apache,</i>
+      <span style="display: inline;">lo cual nos hace pensar que puede haber otro dominio que nos redirija a una página funcional.</span>
+    </div>
+    <img src="HTB/cronos/1.png" width="50%" height="auto">
+  </div>
+
+  <div class="writeup-container">
+    <h2>Contemplación del dominio en el /etc/hosts</h2>
+    <div class="texto">
+      <span style="display: inline;">Aunque no nos hayan proporcionado el dominio, conocémos que en la plataforma de HackTheBox el dominio siempre es el nombre de la máquina y la extensión ".htb", por tanto intuímos que el dominio de esta és</span>
+      <i>cronos.htb,</i>
+      <span style="display: inline;">así que lo contemplamos en la ruta /etc/hosts para ver si nos muestra un contenido distinto a la</span>
+      <i>Default Page</i>
+      <span style="display: inline;">de antes.</span>
+    </div>
+    <div class="texto-resaltado">
+      <pre>
+        <span style="color: rgb(180, 1, 1);">
+  # Host addresses</span><span style="color: rgb(216,216,216);">
+  127.0.0.1  localhost
+  127.0.1.1  parrot
+  ::1        localhost ip6-localhost ip6-loopback
+  ff02::1    ip6-allnodes
+  ff02::2    ip6-allrouters
+  <span style="color: rgb(180, 1, 1);"># Others</span>
+  <span style="color: rgb(216,216,216);">10.10.10.13 cronos.htb</span>
+      </pre>
+    </div>
+  </div>
+
+  <div class="writeup-container">
+    <h2>Inspección de contenido web</h2>
+    <div class="texto">
+      <p>Y como podemos observar, al acceder a la página web con el dominio nos muestra un contenido totalmente distinto.</p>
+    </div>
+    <img src="HTB/cronos/2.png" width="50%" height="auto">
+  </div>
+
+  <footer>Página Web hecha por AnonKex ©2023</footer>
 </body>
 </html>
