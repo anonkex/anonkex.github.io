@@ -4,23 +4,142 @@
   <meta charset="UTF-8">
   <title>Writeup 1 - Máquina 1</title>
   <style>
-    .highlight {
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .texto-resaltado {
       background-color: black;
       color: white;
-      padding: 2px;
+      padding: 0;
+      border-radius: 3px;
+      max-width: 50%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    nav a:hover {
+        background-color: white;
+        border-radius: 5px;
+        color: black;
+        padding: 10px;
+    }
+
+    .writeup-container {
+      margin-left: 2%;
+      margin-top: 6%;
+    }
+
+    .writeup-container p {
+      max-width: 50%;
+      margin-bottom: 2%;
+    }
+
+    hr {
+      margin-top: 2%;
+      margin-bottom: 2%;
+      width: 30%;
     }
   </style>
 </head>
 <body>
-  <h1>Writeup 1 - Máquina 1</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>|</li>
+      <li><a href="htb.html">HTB</a></li>
+      <li>|</li>
+      <li><a href="#">VulnHub</a></li>
+      <li>|</li>
+      <li><a href="#">Herramientas</a></li>
+      <li>|</li>
+      <li><a href="acerca-de-mi.html">Acerca de Mí</a></li>
+    </ul>
+  </nav>
+  <h1>Cronos - HTB</h1>
+  <hr>
+  <center><img src="cronos.png" class="imagen-writeup" width="600" height="auto"></center>
 
-  <h2>Paso 1</h2>
-  <p>Explicación del paso 1.</p>
-  <pre><code><span class="highlight"># Aquí irá tu código bash, python, java, etc.</span></code></pre>
+  <div class="writeup-container">
+    <h2>Enumeración de puertos con Nmap</h2>
+    <p>Para empezar, vamos a realizar un escaneo de la IP víctima, para ver que puertos están abiertos y así hacernos una idea de donde tenemos que atacar.</p>
+    <div class="texto-resaltado">
+      <pre>
+        <span style="color: rgb(216,216,216);">
+  ┌─[anonkex@parrot]─[~/Desktop/HTB/Cronos/nmap]
+  └──╼ $</span><span style="color: #39ff14;">sudo nmap -sS -sV -Pn -n -vvv -p- --open --min-rate 5000 -oG allPorts 10.10.10.13</span>
+  <span style="color: rgb(216,216,216);">Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-28 06:23 CEST
+  NSE: Loaded 45 scripts for scanning.
+  Initiating SYN Stealth Scan at 06:23
+  Scanning 10.10.10.13 [65535 ports]
+  Discovered open port 80/tcp on 10.10.10.13
+  Discovered open port 53/tcp on 10.10.10.13
+  Discovered open port 22/tcp on 10.10.10.13
+  Completed SYN Stealth Scan at 06:23, 11.33s elapsed (65535 total ports)
+  Initiating Service scan at 06:23
+  Scanning 3 services on 10.10.10.13
+  Completed Service scan at 06:23, 6.13s elapsed (3 services on 1 host)
+  NSE: Script scanning 10.10.10.13.
+  NSE: Starting runlevel 1 (of 2) scan.
+  Initiating NSE at 06:23
+  Completed NSE at 06:23, 0.22s elapsed
+  NSE: Starting runlevel 2 (of 2) scan.
+  Initiating NSE at 06:23
+  Completed NSE at 06:23, 0.19s elapsed
+  Nmap scan report for 10.10.10.13
+  Host is up, received user-set (0.058s latency).
+  Scanned at 2023-05-28 06:23:39 CEST for 19s
+  Not shown: 65532 closed tcp ports (reset)
+  PORT   STATE SERVICE REASON         VERSION
+  22/tcp open  ssh     syn-ack ttl 63 OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
+  53/tcp open  domain  syn-ack ttl 63 ISC BIND 9.10.3-P4 (Ubuntu Linux)
+  80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.18 ((Ubuntu))
+  Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+          
+  Read data files from: /usr/bin/../share/nmap
+  Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+  Nmap done: 1 IP address (1 host up) scanned in 20.49 seconds
+              Raw packets sent: 65535 (2.884MB) | Rcvd: 65535 (2.621MB)</span>
+      </pre>
+    </div>
+  </div>
 
-  <h2>Paso 2</h2>
-  <p>Explicación del paso 2.</p>
-  <pre><code><span class="highlight">// Aquí irá tu código bash, python, java, etc.</span></code></pre>
+  <div class="writeup-container">
+    <h2>Paso 2</h2>
+    <p>Explicación del paso 2.</p>
+    <pre><code><span class="highlight">// Aquí irá tu código bash, python, java, etc.</span></code></pre>
+  </div>
 
 </body>
 </html>
