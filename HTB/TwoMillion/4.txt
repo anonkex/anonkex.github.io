@@ -1,0 +1,3 @@
+┌──(kali㉿kali)-[~/Escritorio/HTB/TwoMillion/nmap]
+└─$ echo "OEM2SFUtOEczOTYtREtaT1ctNkMzVTM=" | base64 -d
+8C6HU-8G396-DKZOW-6C3U3                                                                                                                                                     

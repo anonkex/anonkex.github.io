@@ -1,0 +1,46 @@
+┌──(kali㉿kali)-[~/Escritorio/HTB/TwoMillion/nmap]
+└─$ ssh admin@2million.htb
+The authenticity of host '2million.htb (10.10.11.221)' can't be established.
+ED25519 key fingerprint is SHA256:TgNhCKF6jUX7MG8TC01/MUj/+u0EBasUVsdSQMHdyfY.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '2million.htb' (ED25519) to the list of known hosts.
+admin@2million.htb's password: 
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.70-051570-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Mar  6 02:04:04 AM UTC 2024
+
+  System load:           0.07275390625
+  Usage of /:            77.7% of 4.82GB
+  Memory usage:          9%
+  Swap usage:            0%
+  Processes:             219
+  Users logged in:       0
+  IPv4 address for eth0: 10.10.11.221
+  IPv6 address for eth0: dead:beef::250:56ff:feb9:6594
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+You have mail.
+Last login: Tue Mar  5 22:40:57 2024 from 10.10.15.1
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+admin@2million:~$ 

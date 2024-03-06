@@ -1,0 +1,5 @@
+root@2million:/tmp/CVE-2023-0386# cd /root
+root@2million:/root# ls
+root.txt  snap  thank_you.json
+root@2million:/root# cat root.txt 
+794cb46429aec1fb7c5fa2d83e743ebe

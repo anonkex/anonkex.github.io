@@ -1,0 +1,9 @@
+┌──(kali㉿kali)-[~/Escritorio/HTB/TwoMillion/exploits]
+└─$ git clone https://github.com/xkaneiki/CVE-2023-0386
+Clonando en 'CVE-2023-0386'...
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (24/24), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 24 (delta 7), reused 21 (delta 5), pack-reused 0
+Recibiendo objetos: 100% (24/24), 426.11 KiB | 890.00 KiB/s, listo.
+Resolviendo deltas: 100% (7/7), listo.

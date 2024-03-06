@@ -1,0 +1,33 @@
+┌──(kali㉿kali)-[~/Escritorio/HTB/TwoMillion/nmap]
+└─$ sudo nmap -sS -sV -n -vvv -Pn -p- --open --min-rate 5000 -oN allPorts 10.10.11.221
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-03-06 01:41 CET
+NSE: Loaded 46 scripts for scanning.
+Initiating SYN Stealth Scan at 01:41
+Scanning 10.10.11.221 [65535 ports]
+Discovered open port 22/tcp on 10.10.11.221
+Discovered open port 80/tcp on 10.10.11.221
+Completed SYN Stealth Scan at 01:41, 11.72s elapsed (65535 total ports)
+Initiating Service scan at 01:41
+Scanning 2 services on 10.10.11.221
+Completed Service scan at 01:42, 6.09s elapsed (2 services on 1 host)
+NSE: Script scanning 10.10.11.221.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 01:42
+Completed NSE at 01:42, 0.22s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 01:42
+Completed NSE at 01:42, 0.15s elapsed
+Nmap scan report for 10.10.11.221
+Host is up, received user-set (0.069s latency).
+Scanned at 2024-03-06 01:41:42 CET for 18s
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    syn-ack ttl 63 nginx
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 18.98 seconds
+           Raw packets sent: 66075 (2.907MB) | Rcvd: 65535 (2.621MB)

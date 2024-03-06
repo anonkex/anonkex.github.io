@@ -1,0 +1,4 @@
+admin@2million:~$ ls
+user.txt
+admin@2million:~$ cat user.txt
+5eb46ff7e6bb1c5e71ac52aeaefeb814
